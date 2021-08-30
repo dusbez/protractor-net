@@ -108,6 +108,12 @@ namespace Protractor
             }
         }
 
+        public ISearchContext GetShadowRoot()
+        {
+            this.ngDriver.WaitForAngular();
+            return this.element.GetShadowRoot();
+        }
+
         /// <summary>
         /// Gets the tag name of this element.
         /// </summary>
@@ -160,6 +166,12 @@ namespace Protractor
             return this.element.GetAttribute(attributeName);
         }
 
+        public string GetDomAttribute(string attributeName)
+        {
+            this.ngDriver.WaitForAngular();
+            return this.element.GetDomAttribute(attributeName);
+        }
+
         /// <summary>
         /// Gets the value of the specified property for this element.
         /// </summary>
@@ -167,6 +179,12 @@ namespace Protractor
         {
             this.ngDriver.WaitForAngular();
             return this.element.GetProperty(propertyName);
+        }
+
+        public string GetDomProperty(string propertyName)
+        {
+            this.ngDriver.WaitForAngular();
+            return this.element.GetDomProperty(propertyName);
         }
 
         /// <summary>
